@@ -1,6 +1,4 @@
-// Extension of main2.js
-// Now go to issues page of every repository and fetch json files
-// convert json files to pdf files
+
 
 let request = require("request");
 let cheerio = require("cheerio");
@@ -40,7 +38,7 @@ function extractRepodata(fullLink) {
 }
 function getRepoLinks(html) {
     let selTool = cheerio.load(html);
-    let topicNameElem = selTool(".h1-mktg");
+    let topicNameElem = selTool(".h1");
     let repolinks = selTool("a.text-bold");
     // console.log(topicNameElem.text());
     let topicName = topicNameElem.text().trim();
